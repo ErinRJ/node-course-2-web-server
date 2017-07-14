@@ -2,6 +2,7 @@ const express= require('express');
 const hbs= require('hbs');
 const fs= require('fs');
 
+const port = process.env.PORT || 3000;
 var app= express();
 
 //takes the directory to be used for all hbs files and specifies them as the first and only argument
@@ -62,6 +63,6 @@ app.get('/bad', (req, res) => {
 });
 //bind the app to a port on our machine
 //type localhost:3000 to run the app
-app.listen(3000, () => {
-  console.log('Server is up on port 3000');
+app.listen(port, () => {
+  console.log('Server is up on port ' + port);
 });
